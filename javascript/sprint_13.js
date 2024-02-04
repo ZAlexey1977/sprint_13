@@ -10,6 +10,26 @@ class SignupForm extends SignupFormAbstract {
     username = "";
     email = "";
     password = "";
+    //   public validate: boolean = this.validatePassword(this.password);
+    validatePassword(password) {
+        password = password.trim();
+        let out = password.length;
+        return out < 8 ? false : true;
+    }
+}
+// let test = new SignupForm();
+// console.log(test);
+// Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
+// Task 02
+// Создан абстрактный класс SignupFormAbstract. Создайте на его основе класс SignupForm_02,
+// который реализуем свойства и методы абстрактного класса. Для метода validatePassword - реализуйте
+// удаление пробелов по краям и вычисление длины. Если длина меньше 8 символов, возвращайте false,
+// в остальных случаях - true. Значений свойств по умолчанию - пустые строки. Реализуйте в классе конструктор,
+// который задает значения username, email, password при создании объекта.
+class SignupForm_02 extends SignupFormAbstract {
+    username = "";
+    email = "";
+    password = "";
     validate;
     constructor(username, email, password) {
         super();
@@ -23,18 +43,8 @@ class SignupForm extends SignupFormAbstract {
         return out >= 8 ? true : false;
     }
 }
-// let test = new SignupForm("Alex", "alex@gmail.com", "  13242bn   ");
-// console.log(test);
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
-// Task 02
-// Создан абстрактный класс SignupFormAbstract. Создайте на его основе класс SignupForm_02,
-// который реализуем свойства и методы абстрактного класса. Для метода validatePassword - реализуйте
-// удаление пробелов по краям и вычисление длины. Если длина меньше 8 символов, возвращайте false,
-// в остальных случаях - true. Значений свойств по умолчанию - пустые строки. Реализуйте в классе конструктор,
-// который задает значения username, email, password при создании объекта.
-// Тут создаете класс SignupForm_02
-// Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
-// console.log(new SignupForm_02('abba', 'abba@email.ua', '234'));
+console.log(new SignupForm_02("abba", "abba@email.ua", "234"));
 // Task 03
 // Пример из реального фреймворка
 // Создайте абстрактный класс CF. Класс содержит абстрактные поля name, email, subject, body, verifyCode все string,

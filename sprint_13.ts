@@ -16,6 +16,30 @@ class SignupForm extends SignupFormAbstract {
   public username: string = "";
   public email: string = "";
   public password: string = "";
+  //   public validate: boolean = this.validatePassword(this.password);
+
+  public validatePassword(password: string): boolean {
+    password = password.trim();
+    let out: number = password.length;
+    return out < 8 ? false : true;
+  }
+}
+
+// let test = new SignupForm();
+// console.log(test);
+// Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
+
+// Task 02
+// Создан абстрактный класс SignupFormAbstract. Создайте на его основе класс SignupForm_02,
+// который реализуем свойства и методы абстрактного класса. Для метода validatePassword - реализуйте
+// удаление пробелов по краям и вычисление длины. Если длина меньше 8 символов, возвращайте false,
+// в остальных случаях - true. Значений свойств по умолчанию - пустые строки. Реализуйте в классе конструктор,
+// который задает значения username, email, password при создании объекта.
+
+class SignupForm_02 extends SignupFormAbstract {
+  public username: string = "";
+  public email: string = "";
+  public password: string = "";
   public validate: boolean;
   constructor(username: string, email: string, password: string) {
     super();
@@ -30,21 +54,8 @@ class SignupForm extends SignupFormAbstract {
   }
 }
 
-// let test = new SignupForm("Alex", "alex@gmail.com", "  13242bn   ");
-// console.log(test);
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
-
-// Task 02
-// Создан абстрактный класс SignupFormAbstract. Создайте на его основе класс SignupForm_02,
-// который реализуем свойства и методы абстрактного класса. Для метода validatePassword - реализуйте
-// удаление пробелов по краям и вычисление длины. Если длина меньше 8 символов, возвращайте false,
-// в остальных случаях - true. Значений свойств по умолчанию - пустые строки. Реализуйте в классе конструктор,
-// который задает значения username, email, password при создании объекта.
-
-// Тут создаете класс SignupForm_02
-
-// Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
-// console.log(new SignupForm_02('abba', 'abba@email.ua', '234'));
+console.log(new SignupForm_02("abba", "abba@email.ua", "234"));
 
 // Task 03
 // Пример из реального фреймворка
