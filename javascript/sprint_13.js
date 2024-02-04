@@ -49,12 +49,32 @@ console.log(new SignupForm_02("abba", "abba@email.ua", "234"));
 // Пример из реального фреймворка
 // Создайте абстрактный класс CF. Класс содержит абстрактные поля name, email, subject, body, verifyCode все string,
 // и абстрактный метод sendEmail, который принимает аргумент email, тип метода boolean.
-// Тут создаете класс CF
+class CF {
+}
 // Task 04
 // Создайте класс ContactForm на основе класса CF. Свойства реализуйте как пустые строки, добавьте класс конструктор,
 // который позволяет заполнить свойства name, email, subject, body, verifyCode при создании объекта. Метод sendEmail,
 // реализуйте как функцию, возвращающую true.
-// Тут создаете класс ContactForm
+class ContactForm extends CF {
+    name = "";
+    email = "";
+    subject = "";
+    body = "";
+    verifyCode = "";
+    constructor(name, email, subject, body, verifyCode) {
+        super();
+        this.name = name;
+        this.email = email;
+        this.subject = subject;
+        this.body = body;
+        this.verifyCode = verifyCode;
+    }
+    sendEmail(email) {
+        return true;
+    }
+}
+// let test = new ContactForm("tom", "tom@mail.ua", "Math", "www", "22");
+// console.log(test);
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 // Task 05
 // Пример из реального фреймворка
