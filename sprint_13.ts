@@ -55,7 +55,7 @@ class SignupForm_02 extends SignupFormAbstract {
 }
 
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
-console.log(new SignupForm_02("abba", "abba@email.ua", "234"));
+// console.log(new SignupForm_02("abba", "abba@email.ua", "234"));
 
 // Task 03
 // Пример из реального фреймворка
@@ -113,14 +113,38 @@ class ContactForm extends CF {
 // email - string, status - number. Напишите абстрактный метод findByUsername, который принимает имя пользователя - username,
 // и возвращает id пользователя или false.
 
-// Тут создаете класс User
+abstract class User {
+  public abstract id: number;
+  public abstract username: string;
+  public abstract email: string;
+  public abstract status: number;
+
+  abstract findByUsername(username: string): number | boolean;
+}
 
 // Task 06
 // Создайте на основе абстрактного класса User класс Client, где реализуйте все необходимые свойства и методы.
 // По умолчанию числовые значения равны 0, строковые пустой строке. Метод должен возвращать 0.
 
-// Тут создаете класс Client
+class Client extends User {
+  public id: number = 0;
+  public username: string = "";
+  public email: string = "";
+  public status: number = 0;
+  constructor(id: number, username: string, email: string, status: number) {
+    super();
+    this.id = id;
+    this.username = username;
+    this.email = email;
+    this.status = status;
+  }
 
+  findByUsername(username: string): number | boolean {
+    return this.id;
+  }
+}
+
+// console.log(new Client(1, "www", "www@www", 1));
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 
 // Task 07
