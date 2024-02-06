@@ -120,11 +120,30 @@ class Client extends User {
 // string meta_keywords
 // string meta_description
 // Добавьте два readonly свойства общие для всех классов наследников PUBLISHED_YES = 'Yes', PUBLISHED_NO = 'No';
-// Тут создаете класс ArticleInstance
+class ArticleInstance {
+    PUBLISHED_YES = "Yes";
+    PUBLISHED_NO = "No";
+}
 // Task 08
 // Создайте на основе абстрактного класса ArticleInstance класс Article, где реализуйте все необходимые свойства и методы.
 // По умолчанию числовые значения равны 0, строковые пустой строке.
-// Тут создаете класс Article
+class Article extends ArticleInstance {
+    article_id = 0;
+    author_id = 0;
+    language = "";
+    created = 0;
+    updated = 0;
+    published = "";
+    hits_count = 0;
+    intro_text = "";
+    full_text = "";
+    title = "";
+    meta_keywords = "";
+    meta_description = "";
+    PUBLISHED_YES = "Yes";
+    PUBLISHED_NO = "No";
+}
+console.log(new Article());
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 // Task 09
 // Пример из реального фреймворка
