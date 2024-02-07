@@ -91,18 +91,11 @@ class Client extends User {
     username = "";
     email = "";
     status = 0;
-    constructor(id, username, email, status) {
-        super();
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.status = status;
-    }
     findByUsername(username) {
         return this.id;
     }
 }
-// console.log(new Client(1, "www", "www@www", 1));
+// console.log(new Client());
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 // Task 07
 // Пример из реального фреймворка
@@ -143,7 +136,7 @@ class Article extends ArticleInstance {
     PUBLISHED_YES = "Yes";
     PUBLISHED_NO = "No";
 }
-console.log(new Article());
+// console.log(new Article());
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 // Task 09
 // Пример из реального фреймворка
@@ -155,10 +148,20 @@ console.log(new Article());
 // сssOptions - массив строк
 // Добавьте абстрактный метод init, void.
 // Добавьте абстрактный метод publish, void.
-// Тут создаете класс BundleCSS
+class BundleCSS {
+}
 // Task 10
 // Создайте на базе BundleCSS класс CssBundle, реализуйте свойства и методы. Задайте начальные значения для строк и массивов
 // (пустые строки, пустые массивы);
-// Тут создаете класс CssBundle
+class CssBundle extends BundleCSS {
+    sourcePath = "";
+    basePath = "";
+    baseUrl = "";
+    depends = [];
+    сssOptions = [];
+    init() { }
+    publish() { }
+}
+console.log(new CssBundle());
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 //# sourceMappingURL=sprint_13.js.map

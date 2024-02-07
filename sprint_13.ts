@@ -131,20 +131,13 @@ class Client extends User {
   public username: string = "";
   public email: string = "";
   public status: number = 0;
-  constructor(id: number, username: string, email: string, status: number) {
-    super();
-    this.id = id;
-    this.username = username;
-    this.email = email;
-    this.status = status;
-  }
 
   findByUsername(username: string): number | boolean {
     return this.id;
   }
 }
 
-// console.log(new Client(1, "www", "www@www", 1));
+// console.log(new Client());
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 
 // Task 07
@@ -204,7 +197,7 @@ class Article extends ArticleInstance {
   public readonly PUBLISHED_NO = "No";
 }
 
-console.log(new Article());
+// console.log(new Article());
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
 
 // Task 09
@@ -218,12 +211,31 @@ console.log(new Article());
 // Добавьте абстрактный метод init, void.
 // Добавьте абстрактный метод publish, void.
 
-// Тут создаете класс BundleCSS
+abstract class BundleCSS {
+  public abstract sourcePath: string;
+  public abstract basePath: string;
+  public abstract baseUrl: string;
+  public abstract depends: string[];
+  public abstract сssOptions: string[];
+
+  public abstract init(): void;
+  public abstract publish(): void;
+}
 
 // Task 10
 // Создайте на базе BundleCSS класс CssBundle, реализуйте свойства и методы. Задайте начальные значения для строк и массивов
 // (пустые строки, пустые массивы);
 
-// Тут создаете класс CssBundle
+class CssBundle extends BundleCSS {
+  public sourcePath: string = "";
+  public basePath: string = "";
+  public baseUrl: string = "";
+  public depends: string[] = [];
+  public сssOptions: string[] = [];
 
+  public init(): void {}
+  public publish(): void {}
+}
+
+console.log(new CssBundle());
 // Проверку созданного класса реализуйте самостоятельно. После проверки - удалите или комментируйте.
